@@ -1,12 +1,16 @@
-package com.capgemini.wsb.fitnesstracker.user.internal;
+package com.capgemini.wsb.fitnesstracker.user.api;
 
-import com.capgemini.wsb.fitnesstracker.user.api.User;
 import org.springframework.stereotype.Component;
 
 @Component
-class UserMapper {
+public class UserMapper {
 
-    UserDto toDto(User user) {
+    /**
+     * Maps User entity to UserDto
+     * @param user User
+     * @return UserDto
+     */
+    public UserDto toDto(User user) {
         return new UserDto(user.getId(),
                            user.getFirstName(),
                            user.getLastName(),
@@ -14,7 +18,12 @@ class UserMapper {
                            user.getEmail());
     }
 
-    User toEntity(UserDto userDto) {
+    /**
+     * Maps UserDto to User entity
+     * @param userDto UserDto
+     * @return User
+     */
+    public User toEntity(UserDto userDto) {
         return new User(
                         userDto.firstName(),
                         userDto.lastName(),
@@ -22,7 +31,14 @@ class UserMapper {
                         userDto.email());
     }
 
-    User toUpdateEntity(UserDto userDto, User user) {
+    /**
+     * Maps UserDto to User entity with state of previous entity
+     * @param userDto UserDto
+     * @param user User
+     *
+     * @return User
+     */
+    public User toUpdateEntity(UserDto userDto, User user) {
         if(userDto.firstName() != null) {
             user.setFirstName(userDto.firstName());
         }

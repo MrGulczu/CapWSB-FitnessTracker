@@ -16,6 +16,11 @@ public interface UserProvider {
      */
     Optional<User> getUser(Long userId);
 
+    /**
+     * Retrieves all users.
+     *
+     * @return An {@link Optional} containing the all users,
+     */
     List<User> getUsersOlderThan(LocalDate date);
 
     /**
@@ -27,6 +32,12 @@ public interface UserProvider {
      */
     Optional<User> getUserByEmail(String email);
 
+    /**
+     * Retrieves a user based on their email ignoring case.
+     *
+     * @param email The email of the user to be searched
+     * @return An {@link Optional} containing the located user, or {@link Optional#empty()} if not found
+     */
     List<User> getUserByEmailIgnoreCase(String email);
 
     /**
