@@ -103,7 +103,7 @@ public class StatisticsController {
      *
      * @param statisticsId the ID of the statistics to delete
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{statisticsId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteStatistics(@PathVariable Long statisticsId) {
         try {

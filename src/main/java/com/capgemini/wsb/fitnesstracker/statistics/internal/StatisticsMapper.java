@@ -69,7 +69,7 @@ public class StatisticsMapper {
             statistics.setTotalCaloriesBurned(statisticsDtoWithUserId.totalCaloriesBurned());
         }
 
-        if (statisticsDtoWithUserId.userId() != 0) {
+        if (statisticsDtoWithUserId.userId() != null) {
             User user = userProvider.getUser(statisticsDtoWithUserId.userId())
                     .orElseThrow(() -> new IllegalArgumentException("User with id " + statisticsDtoWithUserId.userId() + " not found"));
             statistics.setUser(user);
