@@ -17,7 +17,6 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,6 +33,9 @@ public class NotificationService {
     private final String reportString="Monthy report";
 
 
+    /**
+     * Generates report and sends it to all users.
+     */
     @Scheduled(cron = "0 0 9 1 * *") //Report scheduled for every 1st of month on 9:00
     public void generateReportAndSendMail() {
         System.out.println("Cron scheduling report generation");
@@ -54,6 +56,13 @@ public class NotificationService {
             }
         }
     }
+
+    /**
+     * Converts Date to LocalDateTime.
+     *
+     * @param date Date to be converted
+     * @return LocalDateTime
+     */
     private LocalDateTime toLocalDateTime(Date date) {
         return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
     }

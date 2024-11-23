@@ -4,6 +4,9 @@ import io.micrometer.common.lang.Nullable;
 
 import java.util.Date;
 
+/**
+ * Represents training of a user.
+ */
 public record TrainingDtoWithUserId(
         @Nullable Long id,
         Long userId,

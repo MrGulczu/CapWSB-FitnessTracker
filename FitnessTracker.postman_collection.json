@@ -2,7 +2,6 @@
 	"info": {
 		"_postman_id": "abf89aa6-25dc-4175-b5d0-1ad6c84bb19d",
 		"name": "FitnessTracker",
-		"description": "w",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "7061805"
 	},
@@ -216,14 +215,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/trainings/finished/2023-05-18",
+							"raw": "{{baseUrl}}/trainings/finished/2024-01-17",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"trainings",
 								"finished",
-								"2023-05-18"
+								"2024-01-17"
 							]
 						}
 					},
@@ -310,6 +309,140 @@
 							"path": [
 								"trainings",
 								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "Get all statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/statistics",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get statistics by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/statistics",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get statistics by burned calories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/statistics/moreCaloriesBurned?burnedCalories=1500",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics",
+								"moreCaloriesBurned"
+							],
+							"query": [
+								{
+									"key": "burnedCalories",
+									"value": "1500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create statistic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"9\",\r\n    \"totalTrainings\": 504,\r\n    \"totalDistance\": 255.5,\r\n    \"totalCaloriesBurned\": 2600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/statistics",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update statistic",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"4\",\r\n    \"totalTrainings\": 104,\r\n    \"totalDistance\": 125.5,\r\n    \"totalCaloriesBurned\": 600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/statistics/9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete statistic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trainings/10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trainings",
+								"10"
 							]
 						}
 					},

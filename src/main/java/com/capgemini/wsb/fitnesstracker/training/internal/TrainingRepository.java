@@ -30,6 +30,12 @@ public interface TrainingRepository extends JpaRepository<Training, Long> {
                 .toList();
     }
 
+    /**
+     * Finds a list of trainings associated with a specific user.
+     *
+     * @param user the user to search for trainings
+     * @return a list of trainings associated with the given user
+     */
     default List<Training> findByUserObject(User user) {
         return findAll().stream()
                 .filter(training -> Objects.equals(training.getUser(), user))
